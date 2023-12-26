@@ -16,7 +16,7 @@ object RetrofitServerManager {
 
 //    private val BASE_URL = "http://121.152.22.85:40080/" // Real Address
 
-        private val BASE_URL = "http://121.152.22.85:40081/"; // TEST Address
+    private val BASE_URL = "http://121.152.22.85:40081/"; // TEST Address
     private var instance: RetrofitServerManager? = null
     private var apiService: RetrofitService? = null
 

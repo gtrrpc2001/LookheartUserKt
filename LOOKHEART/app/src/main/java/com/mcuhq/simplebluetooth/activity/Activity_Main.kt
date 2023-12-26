@@ -12,7 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 import com.library.KTLibrary.fragment.ArrFragment
 import com.library.KTLibrary.viewmodel.SharedViewModel
-import com.library.lookheartLibrary.fragment.SummaryFragment
+import com.library.KTLibrary.fragment.SummaryFragment
 import com.mcuhq.simplebluetooth.R
 import com.mcuhq.simplebluetooth.fragment.ProfileFragment
 import com.mcuhq.simplebluetooth.fragment.home.HomeFragment
@@ -85,7 +85,8 @@ class Activity_Main : AppCompatActivity() {
 
                     R.id.bottom_arr -> {
                         if (arrF == null) {
-                            arrF = ArrFragment()
+                            val email = getSharedPreferences("User", MODE_PRIVATE).getString("email","")
+                            arrF = ArrFragment(email)
                             fragmentManager!!.beginTransaction().add(R.id.main_frame, arrF!!).commit()
                         }
                         if (home != null) fragmentManager!!.beginTransaction().hide(home!!).commit()
